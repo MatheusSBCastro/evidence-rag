@@ -1,0 +1,185 @@
+{
+  "scope": "Offline: recuperação por documento, abstenção fora de domínio e contrato extrativo. Não avalia geração LLM.",
+  "corpusDocuments": 8,
+  "corpusChunks": 16,
+  "cases": 20,
+  "recallAt3": 1,
+  "mrrAt3": 1,
+  "outOfDomainAbstention": 1,
+  "results": [
+    {
+      "question": "Como recuperar a senha e quanto tempo dura o link de recuperação?",
+      "documentId": "access",
+      "rank": 1,
+      "retrieved": [
+        "access"
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "Como recuperar a autenticação de dois fatores sem código?",
+      "documentId": "access",
+      "rank": 1,
+      "retrieved": [
+        "access"
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "Onde baixar o PDF das faturas emitidas?",
+      "documentId": "billing",
+      "rank": 1,
+      "retrieved": [
+        "billing"
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "Quantos dias úteis demora a compensação do boleto?",
+      "documentId": "billing",
+      "rank": 1,
+      "retrieved": [
+        "billing"
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "Quais formatos estão disponíveis na exportação de relatórios?",
+      "documentId": "export",
+      "rank": 1,
+      "retrieved": [
+        "export"
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "Como exportar acima de 10 mil registros?",
+      "documentId": "export",
+      "rank": 1,
+      "retrieved": [
+        "export"
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "Quem pode convidar membros e alterar papéis?",
+      "documentId": "permissions",
+      "rank": 1,
+      "retrieved": [
+        "permissions",
+        "permissions"
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "Como remover acesso de um membro preservando registros históricos?",
+      "documentId": "permissions",
+      "rank": 1,
+      "retrieved": [
+        "permissions"
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "Por quanto tempo os registros de auditoria são mantidos?",
+      "documentId": "retention",
+      "rank": 1,
+      "retrieved": [
+        "retention"
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "Qual a janela de cancelamento da exclusão da organização?",
+      "documentId": "retention",
+      "rank": 1,
+      "retrieved": [
+        "retention"
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "Como validar a assinatura HMAC dos webhooks?",
+      "documentId": "integration",
+      "rank": 1,
+      "retrieved": [
+        "integration"
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "Como evitar processamento duplicado de webhook reenviado?",
+      "documentId": "integration",
+      "rank": 1,
+      "retrieved": [
+        "integration"
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "Qual o limite de requisições por minuto e resposta HTTP?",
+      "documentId": "limits",
+      "rank": 1,
+      "retrieved": [
+        "limits",
+        "integration"
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "Como consultar a próxima página usando cursor?",
+      "documentId": "limits",
+      "rank": 1,
+      "retrieved": [
+        "limits"
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "Qual o horário do suporte humano no fuso de Brasília?",
+      "documentId": "availability",
+      "rank": 1,
+      "retrieved": [
+        "availability"
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "O que consultar durante manutenção programada?",
+      "documentId": "availability",
+      "rank": 1,
+      "retrieved": [
+        "availability"
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "Qual a receita de bolo de chocolate?",
+      "documentId": null,
+      "rank": 0,
+      "retrieved": [],
+      "status": "abstained"
+    },
+    {
+      "question": "Quem ganhou a copa de futebol?",
+      "documentId": null,
+      "rank": 0,
+      "retrieved": [],
+      "status": "abstained"
+    },
+    {
+      "question": "Qual a previsão meteorológica de amanhã?",
+      "documentId": null,
+      "rank": 0,
+      "retrieved": [],
+      "status": "abstained"
+    },
+    {
+      "question": "Quanto pesa um elefante africano?",
+      "documentId": null,
+      "rank": 0,
+      "retrieved": [],
+      "status": "abstained"
+    }
+  ]
+}

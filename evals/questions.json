@@ -1,0 +1,22 @@
+[
+  {"question":"Como recuperar a senha e quanto tempo dura o link de recuperação?","documentId":"access"},
+  {"question":"Como recuperar a autenticação de dois fatores sem código?","documentId":"access"},
+  {"question":"Onde baixar o PDF das faturas emitidas?","documentId":"billing"},
+  {"question":"Quantos dias úteis demora a compensação do boleto?","documentId":"billing"},
+  {"question":"Quais formatos estão disponíveis na exportação de relatórios?","documentId":"export"},
+  {"question":"Como exportar acima de 10 mil registros?","documentId":"export"},
+  {"question":"Quem pode convidar membros e alterar papéis?","documentId":"permissions"},
+  {"question":"Como remover acesso de um membro preservando registros históricos?","documentId":"permissions"},
+  {"question":"Por quanto tempo os registros de auditoria são mantidos?","documentId":"retention"},
+  {"question":"Qual a janela de cancelamento da exclusão da organização?","documentId":"retention"},
+  {"question":"Como validar a assinatura HMAC dos webhooks?","documentId":"integration"},
+  {"question":"Como evitar processamento duplicado de webhook reenviado?","documentId":"integration"},
+  {"question":"Qual o limite de requisições por minuto e resposta HTTP?","documentId":"limits"},
+  {"question":"Como consultar a próxima página usando cursor?","documentId":"limits"},
+  {"question":"Qual o horário do suporte humano no fuso de Brasília?","documentId":"availability"},
+  {"question":"O que consultar durante manutenção programada?","documentId":"availability"},
+  {"question":"Qual a receita de bolo de chocolate?","documentId":null},
+  {"question":"Quem ganhou a copa de futebol?","documentId":null},
+  {"question":"Qual a previsão meteorológica de amanhã?","documentId":null},
+  {"question":"Quanto pesa um elefante africano?","documentId":null}
+]
