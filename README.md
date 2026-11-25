@@ -6,6 +6,8 @@
 
 RAG em português · BM25 · Structured Outputs · Node.js 24 · Zero dependências
 
+[![Tests and retrieval evaluation](https://github.com/MatheusSBCastro/evidence-rag/actions/workflows/ci.yml/badge.svg)](https://github.com/MatheusSBCastro/evidence-rag/actions/workflows/ci.yml)
+
 [Começar](#executar-em-um-minuto) · [Arquitetura](#como-funciona) · [Avaliações](#avaliações) · [Limites](#limites-conhecidos)
 
 </div>
