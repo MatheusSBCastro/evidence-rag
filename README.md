@@ -53,11 +53,6 @@ O exemplo acima foi abreviado; a execução retorna o trecho completo, fontes, p
 
 ## Como funciona
 
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="docs/images/rag-flow-static.png">
-  <img src="docs/images/rag-flow.gif" alt="Uma consulta passa pela busca BM25, pela conferência das fontes e pela resposta com citação. Ilustração do fluxo." width="1000">
-</picture>
-
 ```mermaid
 flowchart LR
     A[Pergunta] --> B[Normalização em português]
