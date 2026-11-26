@@ -2,7 +2,7 @@
 
 # Evidence RAG
 
-**Respostas com evidências. Avaliações que você pode reproduzir.**
+Um assistente de suporte que busca documentos em português e confere as fontes citadas na resposta.
 
 RAG em português · BM25 · Structured Outputs · Node.js 24 · Zero dependências
 
@@ -14,9 +14,9 @@ RAG em português · BM25 · Structured Outputs · Node.js 24 · Zero dependênc
 
 ## O problema
 
-Um assistente de suporte precisa encontrar a informação relevante e mostrar de onde ela veio. Este laboratório implementa esse caminho com uma base de conhecimento **fictícia**, recuperação lexical, respostas estruturadas e validação das citações antes de exibir o resultado.
+Ao responder uma dúvida de suporte, o assistente precisa encontrar o trecho certo e citar a fonte. O Evidence RAG faz essa busca em uma base fictícia, retorna uma resposta estruturada e confere as citações antes de exibi-la.
 
-É um projeto de portfólio para estudar engenharia de sistemas com LLMs. O desenvolvimento inicial foi assistido por IA; as decisões, os testes e os limites estão documentados para revisão.
+Criei este laboratório para estudar sistemas com LLMs, com ajuda de IA no desenvolvimento inicial. O código inclui os testes e as decisões de implementação; as limitações estão descritas abaixo.
 
 ## Executar em um minuto
 
@@ -31,7 +31,7 @@ npm test
 npm run eval
 ```
 
-A demonstração usa **extração literal do trecho mais relevante**, identificada no JSON como `extractive-demo`. Ela não chama nem simula uma geração por LLM. Perguntas sem dois termos correspondentes no mesmo trecho produzem abstenção.
+A demonstração copia o trecho mais relevante e identifica esse modo no JSON como `extractive-demo`. Não há chamada nem simulação de LLM nessa execução. Se nenhum trecho tiver pelo menos dois termos da pergunta, o sistema se abstém de responder.
 
 Exemplo resumido:
 
@@ -53,6 +53,11 @@ O exemplo acima foi abreviado; a execução retorna o trecho completo, fontes, p
 
 ## Como funciona
 
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/images/rag-flow-static.png">
+  <img src="docs/images/rag-flow.gif" alt="Uma consulta passa pela busca BM25, pela conferência das fontes e pela resposta com citação. Ilustração do fluxo." width="1000">
+</picture>
+
 ```mermaid
 flowchart LR
     A[Pergunta] --> B[Normalização em português]
@@ -68,12 +73,12 @@ flowchart LR
 
 | Decisão | Por quê |
 | --- | --- |
-| BM25 implementado localmente | Baseline legível e reproduzível; facilita inspecionar erros antes de adicionar embeddings. |
+| BM25 implementado localmente | Permite reproduzir a busca e entender os erros antes de experimentar embeddings. |
 | Um parágrafo por chunk, ID com SHA-256 | Fontes permanecem estáveis ao reordenar documentos. |
 | Top 3 e pelo menos dois termos correspondentes | Reduz recuperação por coincidência de uma única palavra; é uma heurística ajustável, sem calibração estatística. |
 | JSON Schema e validação local | O contrato é aplicado mesmo se o provedor retornar uma resposta inadequada. |
 | IDs e citações validados contra o contexto | Rejeita fontes inventadas e citações que não existem nos trechos recuperados. |
-| Geração opcional e injetável | Testes cobrem o adapter sem rede ou cobrança. |
+| Geração opcional e injetável | Os testes substituem o provedor por respostas controladas, sem rede ou cobrança. |
 
 ## Usar um modelo real
 
@@ -101,7 +106,7 @@ O comando `npm run eval` regenera [`evals/report.json`](evals/report.json). O co
 | MRR@3 por documento | 1,00 |
 | Abstenção nas 4 perguntas fora de domínio | 1,00 |
 
-Esses números são um **smoke test pequeno, escrito junto da implementação**, com vocabulário próximo da base. Não são um benchmark independente, não medem generalização, a precisão do trecho exato nem qualidade da geração. Não há dados reais de usuários.
+As perguntas foram escritas junto da implementação e usam vocabulário próximo ao da base. O resultado serve como uma verificação inicial, com dados sintéticos. Uma avaliação independente ainda precisa medir generalização, precisão do trecho recuperado e qualidade da geração. Nenhum dado real de usuário entrou neste conjunto.
 
 Os 15 testes automatizados verificam recuperação, IDs estáveis, limites de entrada, fontes forjadas, citações alteradas, contrato, erros HTTP, recusas, JSON inválido, respostas incompletas e timeout. O teste que verifica a separação entre instruções e dados **não comprova resistência a prompt injection de um modelo real**.
 
